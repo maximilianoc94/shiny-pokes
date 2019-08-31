@@ -4,7 +4,7 @@ import { fetchData } from '../../api';
 
 function* getPokeData(action) {
     try {
-        const requestFn = action.payload.url ? () => fetchData(action.payload.url) : fetchData;
+        const requestFn = action.payload ? () => fetchData(action.payload) : fetchData;
         const data = yield call(requestFn);
         yield put(receivePokeData(data));
     } catch (error) {

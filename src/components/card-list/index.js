@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-import { requestPokeData } from '../../redux/actions';
+import { requestPokeData, storePage } from '../../redux/actions';
 import Card from './card';
 import styles from './card-list.module.scss';
 
@@ -9,8 +9,7 @@ const POKE_COUNT = 807;
 const getImgUrl = (id) => `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${id}.png`;
 const getPageQuery = (page) => `https://pokeapi.co/api/v2/pokemon/?offset=${PAGE_SIZE * page}&limit=${PAGE_SIZE}`;
 
-function CardList({ pokelist, requestPokeData }) {
-  const [page, setPage] = useState(0);
+function CardList({ pokelist, requestPokeData, storePage, page }) {
   const [pokemons, setPokemons] = useState([]);
   const [lastPage, setLastPage] = useState();
 
@@ -36,14 +35,14 @@ function CardList({ pokelist, requestPokeData }) {
   function pageChange(next) {
     return () => {
       const pageDirection = next ? page + 1 : page - 1;
-      setPage(pageDirection);
+      storePage(pageDirection);
       requestPokeData(getPageQuery(pageDirection));
   };
   }
 
   function pageChangeByIndex(index) {
     return () => {
-      setPage(index - 1);
+      storePage(index - 1);
       requestPokeData(getPageQuery(index - 1));
     };
   }
@@ -72,11 +71,12 @@ function CardList({ pokelist, requestPokeData }) {
 
 function mapStateToProps(state) {
   return {
-    pokelist: state.pokelist.response
+    pokelist: state.pokelist.response,
+    page: state.pagination.page
   };
 }
 
 export default connect(
   mapStateToProps,
-  { requestPokeData }
+  { requestPokeData, storePage }
 )(CardList);
