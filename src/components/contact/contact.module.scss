@@ -45,12 +45,18 @@
     padding: r(10);
     resize: none;
     width: 100%;
+    font-size: r(18);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     background-color: transparent;
     border: r(1) solid $darkBlue;
     border-radius: r(5);
 
     &:focus {
       outline: none;
+    }
+
+    &.error {
+      border-color: $error;
     }
   }
 
@@ -67,8 +73,9 @@
       .identifier {
         position: absolute;
         left: r(30);
+        font-size: r(18);
         padding: 0 r(12);
-        background: $bgBlue;
+        background: $white;
         top: r(-10);
 
         @include media(md) {
@@ -79,8 +86,8 @@
   }
 
   button {
-    background-color: $lightBlue;
-    color: $darkBlue;
+    background-color: $darkBlue;
+    color: $white;
     border-radius: r(5);
     letter-spacing: r(3);
     @include headline(14, 18);
@@ -93,8 +100,8 @@
     }
 
     &:hover {
-      background-color: $darkBlue;
-      color: $lightBlue;
+      background-color: $lightBlue;
+      color: $darkBlue;
 
       div {
 

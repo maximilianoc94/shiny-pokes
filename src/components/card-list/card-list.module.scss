@@ -19,8 +19,7 @@
     padding: r(15);
     border-radius: r(12);
     color: white;
-    text-transform: uppercase;
-    font-weight: 800;
+    text-transform: capitalize;
     font-size: r(8);
     letter-spacing: r(2);
     cursor: pointer;
@@ -36,7 +35,7 @@
 
     &:hover {
       color: $darkBlue;
-      background-color: white;
+      background-color: $lightBlue;
     }
   }
 }

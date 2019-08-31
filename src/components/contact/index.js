@@ -46,6 +46,7 @@ function Form() {
               onChange={name.events.onChange}
               onBlur={name.events.onBlur}
               value={name.state.value}
+              className={nameErrors.name ? styles.error : ''}
             />
             <span className={`${styles.errorMessage} ${nameErrors.name ? styles.active : ''}`}>
               {nameErrors.name || ''}
@@ -62,6 +63,7 @@ function Form() {
               onChange={email.events.onChange}
               onBlur={email.events.onBlur}
               value={email.state.value}
+              className={emailErrors.email ? styles.error : ''}
             />
             <span className={`${styles.errorMessage} ${emailErrors.email ? styles.active : ''}`}>
               {emailErrors.email || ''}
@@ -79,6 +81,7 @@ function Form() {
               onBlur={msg.events.onBlur}
               value={msg.state.value}
               rows="3"
+              className={msgErrors.msg ? styles.error : ''}
             />
             <span className={`${styles.errorMessage} ${msgErrors.msg ? styles.active : ''}`}>
               {msgErrors.msg || ''}
