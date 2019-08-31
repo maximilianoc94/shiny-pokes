@@ -1,0 +1,58 @@
+@import "../../styles/colors.scss";
+
+.header {
+  background-color: $darkBlue;
+  height: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 1600px;
+}
+
+.tittle {
+  margin: 0 20px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
+  cursor: default;
+}
+
+.navWrapper {
+  display: flex;
+}
+
+.link {
+  font-weight: 600;
+  margin: 0 20px;
+  text-decoration: none;
+  width: fit-content;
+  color: #fff;
+  padding: 0;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+
+.line {
+  background-color: $blue;
+  height: 2px;
+  width: 50%;
+  transform: translateX(0);
+  transition: transform 0.3s;
+}
+
+.link:hover .line {
+  transform: translateX(100%);
+  transition: transform 0.3s;
+}
