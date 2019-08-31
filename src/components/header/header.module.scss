@@ -1,8 +1,8 @@
-@import "../../styles/colors.scss";
+@import "../../styles/global.scss";
 
 .header {
   background-color: $darkBlue;
-  height: 70px;
+  height: r(70);
   width: 100%;
   display: flex;
   align-items: center;
@@ -16,15 +16,15 @@
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-  max-width: 1600px;
+  max-width: r(1600);
 }
 
 .tittle {
-  margin: 0 20px;
-  color: #fff;
+  margin: 0 r(20);
+  color: $white;
   font-weight: 600;
-  font-size: 24px;
-  line-height: 28px;
+  font-size: r(24);
+  line-height: r(28);
   cursor: default;
 }
 
@@ -34,19 +34,19 @@
 
 .link {
   font-weight: 600;
-  margin: 0 20px;
+  margin: 0 r(20);
   text-decoration: none;
   width: fit-content;
   color: #fff;
   padding: 0;
-  font-size: 14px;
-  line-height: 18px;
+  font-size: r(14);
+  line-height: r(18);
   text-transform: uppercase;
 }
 
 .line {
   background-color: $blue;
-  height: 2px;
+  height: r(2);
   width: 50%;
   transform: translateX(0);
   transition: transform 0.3s;

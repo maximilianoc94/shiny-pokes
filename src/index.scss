@@ -1,4 +1,8 @@
-@import "./styles/colors.scss";
+@import "./styles/global.scss";
+
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -19,4 +23,13 @@ main {
   max-width: 1300px;
   padding: 20px;
   margin: 0 auto;
+}
+
+button {
+  outline: none;
+  text-decoration: none;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s;
 }

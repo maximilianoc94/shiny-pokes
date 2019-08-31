@@ -1,4 +1,4 @@
-@import "../../styles/colors.scss";
+@import "../../styles/global.scss";
 
 .listWrapper {
   display: flex;
@@ -8,21 +8,31 @@
 
 .paginationWrapper {
   width: 100%;
+  display: flex;
+  justify-content: space-between;
 
   .btn {
     background-color: $darkBlue;
     outline: none;
     text-decoration: none;
     border: none;
-    padding: 15px;
-    border-radius: 12px;
+    padding: r(15);
+    border-radius: r(12);
     color: white;
     text-transform: uppercase;
     font-weight: 800;
-    letter-spacing: 2px;
+    font-size: r(8);
+    letter-spacing: r(2);
     cursor: pointer;
-    transition: all 0.3s;
-    margin: 20px 0;
+    transition: color 0.3s, background-color 0.3s;
+    margin: r(8) 0;
+    @include media(md) {
+      font-size: r(16);
+    }
+
+    &.hide {
+      visibility: hidden;
+    }
 
     &:hover {
       color: $darkBlue;
@@ -31,10 +41,20 @@
   }
 }
 
-.left {
-  float: left;
+.indexes {
+  margin: 0 r(10);
+  display: flex;
+  align-items: center;
 }
 
-.right {
-  float: right;
+.pageIndex {
+  cursor: pointer;
+  color: $darkBlue;
+  margin: r(4);
+
+  &.active {
+    cursor: default;
+    font-weight: 800;
+    text-decoration: underline;
+  }
 }

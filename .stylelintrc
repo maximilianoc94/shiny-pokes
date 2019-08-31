@@ -4,7 +4,13 @@
     "at-rule-no-unknown": [ true, {
       "ignoreAtRules": [
         "extends",
-        "include"
+        "include",
+        "mixin",
+        "if",
+        "else",
+        "function",
+        "return",
+        "warn"
       ]
     }],
      rule-empty-line-before:["always-multi-line"]

@@ -1,0 +1,26 @@
+$sm: 375;
+$md: 768;
+$lg: 1300;
+
+@mixin media($class) {
+  @if $class == sm {
+    @media (min-width: r($sm)) {
+      @content;
+    }
+  } @else if $class == md {
+    @media (min-width: r($md)) {
+      @content;
+    }
+  } @else if $class == lg {
+    @media (min-width: r($lg)) {
+      @content;
+    }
+  } @else {
+    @warn 'Breakpoint mixin supports: sm, md, lg';
+  }
+}
+
+@mixin headline($font-size, $line-height) {
+  font-size: r($font-size);
+  line-height: r($line-height);
+}

@@ -1,0 +1,142 @@
+@import "../../styles/global.scss";
+
+.title {
+  color: $darkBlue;
+  font-weight: bold;
+  @include headline(24, 36);
+  @include media(md) {
+    @include headline(36, 53);
+  }
+  @include media(lg) {
+    @include headline(49, 72);
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  form {
+    width: 100%;
+  }
+
+  p {
+    @include headline(12, 17);
+    font-weight: normal;
+    margin-top: r(20);
+    margin-bottom: r(20);
+    width: 100%;
+    @include media(md) {
+      @include headline(18, 24);
+      margin-top: r(50);
+      margin-bottom: r(40);
+      width: r(530);
+    }
+    @include media(lg) {
+      margin-top: 0;
+      width: 100%;
+    }
+  }
+
+  input,
+  textarea {
+    min-height: 48px;
+    padding: r(10);
+    resize: none;
+    width: 100%;
+    background-color: transparent;
+    border: r(1) solid $darkBlue;
+    border-radius: r(5);
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .input {
+    position: relative;
+    width: 100%;
+    margin-bottom: r(14);
+    @include media(md) {
+      margin-bottom: r(16);
+    }
+
+    .label {
+
+      p {
+        position: absolute;
+        left: r(30);
+        padding: 0 r(12);
+        background: $bgBlue;
+        width: fit-content;
+        top: r(-30);
+
+        @include media(md) {
+          top: r(-60);
+        }
+        @include media(lg) {
+          top: r(-15);
+        }
+      }
+    }
+  }
+
+  button {
+    background-color: $lightBlue;
+    color: $darkBlue;
+    border-radius: r(5);
+    letter-spacing: r(3);
+    @include headline(14, 18);
+    font-weight: 600px;
+    padding: r(14) 0;
+    width: 100%;
+    transition: background-color 0.3s, color 0.3s;
+    @include media(md) {
+      width: 40%;
+    }
+
+    &:hover {
+      background-color: $darkBlue;
+      color: $lightBlue;
+
+      div {
+
+        div {
+          background-color: $white;
+        }
+      }
+    }
+
+    &:disabled {
+      cursor: default;
+    }
+  }
+}
+
+.errorMessage {
+  color: $error;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.3s;
+  @include headline(12, 16);
+  padding-left: r(3);
+  padding-top: 0;
+  display: block;
+  text-align: left;
+  height: r(20);
+
+  &.active {
+    padding-top: r(4);
+    opacity: 1;
+  }
+}
+
+.biggerText {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: r(16);
+  @include media(md) {
+    font-size: r(20);
+  }
+}
