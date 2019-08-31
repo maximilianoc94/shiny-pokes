@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export const useSubmitState = (cbPromise, initialText, Spinner, finalText = 'Gracias!') => {
+export const useSubmitState = (cbPromise, initialText, Spinner, finalText = '¡Gracias!') => {
   const [child, setChild] = useState(initialText);
   const [disabled, setDisabled] = useState(false);
 

@@ -64,18 +64,14 @@
 
     .label {
 
-      p {
+      .identifier {
         position: absolute;
         left: r(30);
         padding: 0 r(12);
         background: $bgBlue;
-        width: fit-content;
-        top: r(-30);
+        top: r(-10);
 
         @include media(md) {
-          top: r(-60);
-        }
-        @include media(lg) {
           top: r(-15);
         }
       }

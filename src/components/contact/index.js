@@ -39,7 +39,7 @@ function Form() {
       <form onSubmit={submitHandler}>
         <div className={styles.input}>
           <label htmlFor="name" className={styles.label}>
-            <p>Nombre</p>
+            <span className={styles.identifier}>Nombre</span>
             <input
               id="name"
               name="name"
@@ -55,7 +55,7 @@ function Form() {
 
         <div className={styles.input}>
           <label htmlFor="email" className={styles.label}>
-            <p>Email</p>
+            <span className={styles.identifier}>Email</span>
             <input
               id="email"
               name="email"
@@ -71,7 +71,7 @@ function Form() {
 
         <div className={styles.input}>
           <label htmlFor="mensaje" className={styles.label}>
-            <p>Mensaje</p>
+            <span className={styles.identifier}>Mensaje</span>
             <textarea
               id="mensaje"
               name="mensaje"
@@ -96,7 +96,7 @@ function Form() {
 function Contact() {
   return (
     <>
-      <h1 className={styles.title}>Contactame!</h1>
+      <h1 className={styles.title}>¡Contáctame!</h1>
       <Form />
     </>
   );
